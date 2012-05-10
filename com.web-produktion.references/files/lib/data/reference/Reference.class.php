@@ -5,6 +5,7 @@ use wcf\system\breadcrumb\IBreadcrumbProvider;
 use wcf\system\breadcrumb\Breadcrumb;
 use wcf\system\request\IRouteController;
 use wcf\system\request\LinkHandler;
+use wcf\system\WCF;
 
 /**
  * @author	Jean-Marc Licht
@@ -30,9 +31,7 @@ class Reference extends DatabaseObject implements IBreadcrumbProvider, IRouteCon
 	 * @see wcf\system\breadcrumb\IBreadcrumbProvider::getBreadcrumb()
 	 */
 	public function getBreadcrumb() {
-		return new Breadcrumb($this->title, LinkHandler::getInstance()->getLink('Reference', array(
-			'object' => $this
-		)));
+		return new Breadcrumb(WCF::getLanguage()->get('wcf.reference.title'), LinkHandler::getInstance()->getLink('References'));
 	}
 	
 	/**

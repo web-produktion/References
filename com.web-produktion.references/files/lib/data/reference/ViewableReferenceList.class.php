@@ -16,7 +16,7 @@ class ViewableReferenceList extends ReferenceList {
 	 * decorator class name
 	 * @var string
 	 */
-	public $decoratorClassName = 'wcf\data\reference\ReferenceList';
+	public $decoratorClassName = 'wcf\data\reference\ViewableReference';
 	
 	/**
 	 * @see	wcf\data\DatabaseObjectList::readObjects()

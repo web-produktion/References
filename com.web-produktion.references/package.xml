@@ -28,5 +28,8 @@
 		<!-- files -->
 		<instruction type="file">files.tar</instruction>
 		<instruction type="template">templates.tar</instruction>
+		
+		<!-- xml -->
+		<instruction type="pageMenu">pageMenu.xml</instruction>
 	</instructions>
 </package>
