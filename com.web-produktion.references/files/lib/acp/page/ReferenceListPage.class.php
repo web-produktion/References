@@ -11,7 +11,7 @@ use wcf\system\menu\acp\ACPMenu;
  * @subpackage	acp.page
  * @category 	Woltlab Community Framework
  */
-class ReferenceListPage extends AbstractPage {
+class ReferenceListPage extends SortablePage {
 	
 	/**
 	 * @see wcf\page\AbstractPage::$templateName
@@ -26,12 +26,12 @@ class ReferenceListPage extends AbstractPage {
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$defaultSortField
 	 */
-	public $defaultSortField = 'sortOrder';
+	public $defaultSortField = 'position';
 	
 	/**
 	 * @see	wcf\page\MultipleLinkPage::$validSortFields
 	 */
-	public $validSortFields = array('referenceID', 'sortOrder', 'subject');
+	public $validSortFields = array('referenceID', 'position', 'subject');
 	
 	/**
 	 * @see wcf\page\IPage::show()

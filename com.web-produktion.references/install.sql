@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS wcf1_reference (
 	description MEDIUMTEXT NOT NULL,
 	domain VARCHAR(255) NOT NULL DEFAULT 'http://',
 	public TINYINT(1) NOT NULL DEFAULT 0,
-	sortOrder INT(10) NOT NULL DEFAULT 0,
+	position INT(10) NOT NULL DEFAULT 0,
 	time INT(16) NOT NULL DEFAULT 0,
 	PRIMARY KEY (referenceID)
 );

@@ -21,7 +21,7 @@
 			{foreach from=$objects item=reference}
 				<p>TODO: display references here</p>
 				
-				<p><a href="{link controller='Reference' object=$reference}{/link}">{@$reference->title}</a></p>
+				<p><a href="{link controller='Reference' object=$reference}{/link}">{@$reference->subject}</a></p>
 			{/foreach}
 		{/content}
 	</div>

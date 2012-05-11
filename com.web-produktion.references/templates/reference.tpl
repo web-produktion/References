@@ -1,7 +1,7 @@
 {include file='documentHeader'}
 
 <head>
-	<title>{$reference->title} - {lang}wcf.reference.title{/lang} - {PAGE_TITLE|language}</title>
+	<title>{$reference->subject} - {lang}wcf.reference.title{/lang} - {PAGE_TITLE|language}</title>
 	
 	{include file='headInclude'}
 </head>
@@ -11,7 +11,7 @@
 
 <header class="boxHeadline">
 	<hgroup>
-		<h1><a href="{link controller='Reference' object=$reference}{/link}">{$reference->title}</a></h1>
+		<h1><a href="{link controller='Reference' object=$reference}{/link}">{$reference->subject}</a></h1>
 	</hgroup>
 </header>
 

@@ -7,13 +7,13 @@
 		
 		<acpmenuitem name="wcf.acp.menu.link.reference.list">
 			<link>index.php/ReferenceList/</link>
-			<parent>wcf.acp.menu.link.content.reference</parent>
+			<parent>wcf.acp.menu.link.reference</parent>
 			<showorder>1</showorder>
 		</acpmenuitem>
 		
 		<acpmenuitem name="wcf.acp.menu.link.reference.add">
 			<link>index.php/ReferenceAdd/</link>
-			<parent>wcf.acp.menu.link.content.reference</parent>
+			<parent>wcf.acp.menu.link.reference</parent>
 			<showorder>2</showorder>
 		</acpmenuitem>
 	</import>
