@@ -32,6 +32,7 @@
 		<!-- xml -->
 		<instruction type="pageMenu">pageMenu.xml</instruction>
 		<instruction type="acpMenu">acpMenu.xml</instruction>
+		<instruction type="objectType">objectType.xml</instruction>
 		
 		<!-- language -->
 		<instruction type="language">language/*.xml</instruction>
@@ -46,6 +47,7 @@
 		<!-- xml -->
 		<instruction type="pageMenu">pageMenu.xml</instruction>
 		<instruction type="acpMenu">acpMenu.xml</instruction>
+		<instruction type="objectType">objectType.xml</instruction>
 		
 		<!-- language -->
 		<instruction type="language">language/*.xml</instruction>
