@@ -42,23 +42,7 @@
 					<small>{lang}wcf.acp.reference.add.subject.description{/lang}</small>
 				</dd>
 			</dl>
-			
-			<dl>
-				<dt><label for="shortDescription">{lang}wcf.acp.reference.add.shortDescription{/lang}</label></dt>
-				<dd>
-					<textarea id="shortDescription" name="shortDescription" rows="10" cols="40">{$shortDescription}</textarea>
-					<small>{lang}wcf.acp.reference.add.shortDescription.description{/lang}</small>
-				</dd>
-			</dl>
-			
-			<dl>
-				<dt><label for="domain">{lang}wcf.acp.reference.add.domain{/lang}</label></dt>
-				<dd>
-					<input type="text" id="domain" name="domain" value="{$domain}" required="true" class="long" />
-					<small>{lang}wcf.acp.reference.add.domain.description{/lang}</small>
-				</dd>
-			</dl>
-			
+
 			<dl{if $errorField == 'position'} class="formError"{/if}>
 				<dt><label for="position">{lang}wcf.acp.reference.add.position{/lang}</label></dt>
 				<dd>

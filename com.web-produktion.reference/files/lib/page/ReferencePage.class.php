@@ -1,9 +1,6 @@
 <?php
 namespace wcf\page;
-use wcf\data\reference\ViewableReference;
-use wcf\system\exception\IllegalLinkException;
 use wcf\system\menu\page\PageMenu;
-use wcf\system\WCF;
 
 /** 
  * @author	Jean-Marc Licht
@@ -13,55 +10,21 @@ use wcf\system\WCF;
  * @subpackage	page
  * @category 	Woltlab Community Framework
  */
-class ReferencePage extends AbstractPage {
+class ReferencePage extends MultipleLinkPage {
 	
 	/**
-	 * reference id
-	 * @var integer
+	 * @see	wcf\page\MultipleLinkPage::$objectListClassName
 	 */
-	public $referenceID = 0;
+	public $objectListClassName = 'wcf\data\reference\ViewableReferenceList';
+	
 	
 	/**
-	 * reference object
-	 * @var ViewableReference
+	 * @see wcf\page\MultipleLinkPage::initObjectList()
 	 */
-	public $reference = 0;
-	
-	/**
-	 * @see wcf\page\IPage::readParameters()
-	 */
-	public function readParameters() {
-		parent::readParameters();
+	protected function initObjectList() {
+		parent::initObjectList();
 		
-		if (isset($_REQUEST['id'])) $this->referenceID = intval($_REQUEST['id']);
-		
-		// get reference
-		$this->reference = ViewableReference::getReference($this->referenceID);
-		if (!$this->reference->referenceID) {
-			throw new IllegalLinkException();
-		}
-	}
-	
-	/**
-	 * @see wcf\page\IPage::readData()
-	 */
-	public function readData() {
-		parent::readData();
-		
-		// create breadcrumbs
-		WCF::getBreadcrumbs()->add($this->reference->getBreadcrumb());
-	}
-	
-	/**
-	 * @see wcf\page\IPage::assignVariables()
-	 */
-	public function assignVariables() {
-		parent::assignVariables();
-		
-		WCF::getTPL()->assign(array(
-			'referenceID' => $this->referenceID,
-			'reference' => $this->reference
-		));
+		$this->objectList->getConditionBuilder()->add('reference.public = ?', array(1));
 	}
 	
 	/**

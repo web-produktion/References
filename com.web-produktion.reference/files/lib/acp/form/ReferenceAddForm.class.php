@@ -27,18 +27,6 @@ class ReferenceAddForm extends MessageForm {
 	public $activeMenuItem = 'wcf.acp.menu.link.reference.add';
 	
 	/**
-	 * reference shortDescription
-	 * @var	string
-	 */
-	public $shortDescription = '';
-	
-	/**
-	 * reference domain
-	 * @var	string
-	 */
-	public $domain = '';
-	
-	/**
 	 * reference is public
 	 * @var	boolean
 	 */
@@ -56,8 +44,6 @@ class ReferenceAddForm extends MessageForm {
 	public function readFormParameters() {
 		parent::readFormParameters();
 		
-		if (isset($_POST['shortDescription'])) $this->shortDescription = StringUtil::trim($_POST['shortDescription']);
-		if (isset($_POST['domain'])) $this->domain = StringUtil::trim($_POST['domain']);
 		if (isset($_POST['position'])) $this->position = intval($_POST['position']);
 		if (isset($_POST['public'])) $this->public = true;
 	}
@@ -70,8 +56,6 @@ class ReferenceAddForm extends MessageForm {
 		
 		// save reference
 		$this->objectAction = new ReferenceAction(array(), 'create', array('data' => array(
-			'shortDescription' => $this->shortDescription,
-			'domain' => $this->domain,
 			'public' => ($this->public ? 1 : 0),
 			'position' => $this->position,
 			'subject' => $this->subject,
@@ -82,7 +66,7 @@ class ReferenceAddForm extends MessageForm {
 		
 		// reset values
 		$this->public = false;
-		$this->shortDescription = $this->subject = $this->text = '';
+		$this->subject = $this->text = '';
 		$this->position = 0;
 		
 		// show success
@@ -99,9 +83,7 @@ class ReferenceAddForm extends MessageForm {
 		
 		WCF::getTPL()->assign(array(
 			'action' => 'add',
-			'shortDescription' => $this->shortDescription,
 			'public' => $this->public,
-			'domain' => $this->domain,
 			'position' => $this->position
 		));
 	}

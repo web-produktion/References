@@ -1,10 +1,6 @@
 <?php
 namespace wcf\data\reference;
 use wcf\data\DatabaseObject;
-use wcf\system\breadcrumb\IBreadcrumbProvider;
-use wcf\system\breadcrumb\Breadcrumb;
-use wcf\system\request\IRouteController;
-use wcf\system\request\LinkHandler;
 use wcf\system\WCF;
 
 /**
@@ -15,7 +11,7 @@ use wcf\system\WCF;
  * @subpackage	data.reference
  * @category 	Woltlab Community Framework
  */
-class Reference extends DatabaseObject implements IBreadcrumbProvider, IRouteController {
+class Reference extends DatabaseObject {
 	
 	/**
 	 * @see	wcf\data\DatabaseObject::$databaseTableName
@@ -26,25 +22,4 @@ class Reference extends DatabaseObject implements IBreadcrumbProvider, IRouteCon
 	 * @see	wcf\data\DatabaseObject::$databaseTableIndexName
 	 */
 	protected static $databaseTableIndexName = 'referenceID';
-	
-	/**
-	 * @see wcf\system\breadcrumb\IBreadcrumbProvider::getBreadcrumb()
-	 */
-	public function getBreadcrumb() {
-		return new Breadcrumb(WCF::getLanguage()->get('wcf.reference.title'), LinkHandler::getInstance()->getLink('References'));
-	}
-	
-	/**
-	 * @see	wcf\system\request\IRouteController::getID()
-	 */
-	public function getID() {
-		return $this->referenceID;
-	}
-	
-	/**
-	 * @see	wcf\system\request\IRouteController::getTitle()
-	 */
-	public function getTitle() {
-		return $this->title;
-	}
 }
